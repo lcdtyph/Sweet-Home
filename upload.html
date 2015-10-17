@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
+<title>头像上传</title>
+	<style type = "text/css">
+		html{font-size : 12px;}
+		fieldset{width : 520px; margin : 0 auto;}
+		legend{font-weight : bold; font-size : 14px;}
+		label{float : left; width : 70px; margin-left : 10px;}
+		.left{margin-left : 80px;}
+		.input{width : 150px;}
+		span{color : #666666;}
+	</style>
+</head>
+
+<div>
+<fieldset>
+<legend>头像上传</legend>
+<form name = "UploadForm" method = "post" action = "upload.php?action=profile_photo" enctype = "multipart/form-data">
+<p>
+<label for="file">文件名：</label>
+<input type="file" name="file" id="file" /> 
+<span class = "error">支持*.jpg, *.png, *bmp 和 *.gif, 文件不超过500kb</span>
+<br/>
+</p>
+
+<p>
+<input type = "submit" name = "submit" value = "提　交" class = "left" />
+<a href = "index.php"><input type = "button" value = "返回" /></a>
+</p>
+
+</form>
+</fieldset>
+</div>
+</html>

@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta http-equiv = "Content-Type" content = "text/html; charset=utf-8" />
+<title>修改密码</title>
+	<style type = "text/css">
+		html{font-size : 12px;}
+		fieldset{width : 520px; margin : 0 auto;}
+		legend{font-weight : bold; font-size : 14px;}
+		label{float : left; width : 70px; margin-left : 10px;}
+		.left{margin-left : 80px;}
+		.input{width : 150px;}
+		span{color : #666666;}
+	</style>
+</head>
+
+<div>
+<fieldset>
+<legend>修改密码</legend>
+<form name = "chanegePwForm" method = "post" action = "changePw.php">
+
+<p>
+<label for = "password" class = "label">原密码：</label>
+<input id = "password" name = "password" type = "password" class = "input" />
+<span class = "error">* (长度6-25，不可使用中文)</span>
+</p>
+
+<p>
+<label for = "newpassword" class = "label">新密码：</label>
+<input id = "newpassword" name = "newpassword" type = "password" class = "input" />
+<span class = "error">* (长度6-25，不可使用中文)</span>
+</p>
+
+<p>
+<label for = "newrepass" class = "label">重复密码：</label>
+<input id = "newrepass" name = "newrepass" type = "password" class = "input" />
+<span class = "error">* (请保证两次密码一致)</span>
+</p>
+
+
+<p>
+<input type = "submit" name = "submit" value = "确认" class = "left" />
+<a href = "personalcenter.php"><input type = "button" value = "返回" /></a>
+</p>
+
+</form>
+</fieldset>
+</div>
+</html>
