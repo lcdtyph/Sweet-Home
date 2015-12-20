@@ -1,6 +1,9 @@
 <?php
 	session_start();
 
+	if(!isset($_SESSION["userid"])){
+		exit("请先登录");
+	}
 	$userid = $_SESSION["userid"];
 
 //	echo "temp_name      ：" . $_FILES["file"]["tmp_name"] . "<br>";
@@ -32,19 +35,20 @@
 
 		include("conn.php");
 
-		$oldPhotoName = mysql_fetch_object(mysql_query("select photo from user where uid = '$userid'"));
-		echo $oldPhotoName->photo . "<br>";
+		$oldPhotoName = mysql_fetch_object(mysql_query("select photo from profile where uid = '$userid'"));
+//		echo $oldPhotoName->photo . "<br>";
 		if($oldPhotoName->photo != 'default.jpg'){
 			unlink("profile_photo/" . $oldPhotoName->photo);
 		}
 
-		if(mysql_query("update user set photo = '$filename' where uid = '$userid'")){
+		if(mysql_query("update profile set photo = '$filename' where uid = '$userid'")){
 			echo "更改成功！<br>";
 		} else {
 			exit("数据库错误");
 		}
+		echo '<a href = "personalCenter.php">返回</a><br>';
+	}else if($_GET["action"] == "animals"){
 
 	}
-	echo '<a href = "personalCenter.php">返回</a><br>';
 
 ?>

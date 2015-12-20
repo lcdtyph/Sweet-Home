@@ -51,13 +51,18 @@
 	$regdate = time();
 	$password = md5($password);
 	$userid = md5($username . $regdate);
+	$gender = $_POST["gender"];
+	$area = $_POST["area"];
 
-	$sqlcmd = "insert into user(username, password, email, regdate, uid)values('$username', '$password', '$email', '$regdate', '$userid')";
-
-	if(!mysql_query($sqlcmd, $con)){
+	$sqlcmd = "insert into user(username, password, email, regdate, uid, gender, area)values('$username', '$password', '$email', '$regdate', '$userid', '$gender', '$area')";
+	mkdir("profile/" . $userid);
+	$file = fopen("profile/$userid/puppy.txt", "w");
+	fwrite($file, "\n");
+	fclose($file);
+	if(!mysql_query($sqlcmd, $con) || !mysql_query("insert into profile(uid) values('$userid');")){
 		die("error" . mysql_error());
 	} else {
-		exit('用户注册成功！点击<a href = "login.html">此处</a>登录');
+		exit('<script>alert("用户注册成功！");top.location="login.html";</script>');
 	}
 
 ?>
