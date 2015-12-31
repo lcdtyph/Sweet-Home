@@ -1,6 +1,6 @@
 <?php
 
-	$con = mysql_connect("localhost", "root", "spark112358");
+	$con = mysql_connect("localhost", "root", "");
 	if(!$con){
 		die('Could not connect:' . mysql_error());
 	}
