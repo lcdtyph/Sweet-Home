@@ -1,5 +1,6 @@
 # Sweet-Home
 猫狗校园
+sjtu 2014级软件工程大作业
 
 后台部分：
 	用户登录、注册：login.php reg.php
